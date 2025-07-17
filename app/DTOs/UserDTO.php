@@ -2,7 +2,6 @@
 
 namespace App\DTOs;
 
-use Illuminate\Validation\Rules\Password;
 use WendellAdriel\ValidatedDTO\ValidatedDTO;
 
 class UserDTO extends ValidatedDTO
@@ -21,17 +20,8 @@ class UserDTO extends ValidatedDTO
     public function rules(): array
     {
         return [
-            // 'name'     => ['required', 'string'],
             'email'    => ['required', 'string', 'email'],
-            'password' => [
-                'required',
-                Password::min(8)
-                    ->mixedCase()
-                    ->letters()
-                    ->numbers()
-                    ->symbols()
-                    ->uncompromised(),
-            ],
+            'password' => ['required', 'string'],
         ];
     }
 

@@ -5,6 +5,7 @@ namespace App\Http\Requests\Auth;
 use App\DTOs\UserDTO;
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules;
 
 class RegisterRequest extends FormRequest
 {
@@ -25,8 +26,8 @@ class RegisterRequest extends FormRequest
     {
         $rules = (new UserDTO)->rules();
         $rules['name'] = ['required', 'string', 'max:255'];
-        $rules['email'] = array_merge($rules['email'], ['max:255', 'unique:'.User::class]);
-        $rules['password'] = array_merge($rules['password'], ['confirmed']);
+        $rules['email'] = array_merge($rules['email'], ['lowercase', 'max:255', 'unique:'.User::class]);
+        $rules['password'] = array_merge($rules['password'], ['confirmed', Rules\Password::defaults()]);
         return $rules;
     }
 }

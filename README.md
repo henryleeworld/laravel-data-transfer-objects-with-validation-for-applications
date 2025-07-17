@@ -1,4 +1,4 @@
-# Laravel 10 提供驗證的資料傳輸物件
+# Laravel 11 提供驗證的資料傳輸物件
 
 引入 wendelladriel 的 laravel-validated-dto 套件來擴增提供驗證的資料傳輸物件（DTO），資料傳輸物件是一個物件，定義如何透過網路傳送資料。
 
@@ -35,5 +35,5 @@ $ npm run build
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/VTkODuu.png)
+![](https://i.imgur.com/xscIhGT.png)
 > 透過資料傳輸物件定義驗證規則。
